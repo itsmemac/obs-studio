@@ -60,6 +60,8 @@ Video Handler
 
    - VIDEO_FORMAT_V210
 
+   - VIDEO_FORMAT_R10L
+
 ---------------------
 
 .. enum:: video_trc
@@ -173,6 +175,17 @@ Video Handler
    :param video:    Video output handler object
    :param callback: Callback
    :param param:    Private data
+
+---------------------
+
+.. function:: bool video_output_disconnect2(video_t *video, void (*callback)(void *param, struct video_data *frame), void *param)
+
+   Disconnects a raw video callback from the video output handler.
+
+   :param video:    Video output handler object
+   :param callback: Callback
+   :param param:    Private data
+   :return:         *true* if callback was removed, *false* otherwise (e.g., already removed)
 
 ---------------------
 
